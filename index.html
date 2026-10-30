@@ -203,6 +203,125 @@
     .student-data strong { color: var(--ink); }
     footer { padding: 22px 0 30px; color: var(--muted); font-size: .75rem; }
 
+    /* Ajustes exclusivos para telas de computador */
+    @media (min-width: 761px) {
+      :root { --width: 1240px; }
+
+      .container {
+        width: min(var(--width), calc(100% - 72px));
+      }
+
+      .topbar-inner { min-height: 70px; }
+      .site-name { font-size: 1.3rem; }
+      nav { gap: 28px; }
+      nav a { font-size: .88rem; }
+
+      .cover {
+        grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+        min-height: clamp(420px, 38vw, 570px);
+      }
+      .cover-text {
+        max-width: none;
+        justify-self: stretch;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(48px, 5.2vw, 88px) 52px clamp(48px, 5.2vw, 88px)
+          max(22px, calc((100vw - var(--width)) / 2));
+      }
+      .cover-photo,
+      .cover-photo img {
+        min-height: clamp(420px, 38vw, 570px);
+      }
+      .cover-photo img { object-position: center; }
+      h1 {
+        max-width: 620px;
+        font-size: clamp(3.4rem, 5.7vw, 6rem);
+      }
+      .cover-subtitle {
+        font-size: clamp(1.45rem, 2.4vw, 2rem);
+      }
+
+      .school-info {
+        gap: 10px 34px;
+        padding: 18px 0;
+        font-size: .86rem;
+      }
+
+      section.content-section { padding: 76px 0; }
+      .section-title {
+        gap: 16px;
+        margin-bottom: 34px;
+        font-size: clamp(2.1rem, 3vw, 2.65rem);
+      }
+      .section-title span { font-size: .82rem; }
+
+      .text-column { max-width: 980px; }
+      .text-column p {
+        margin-bottom: 20px;
+        font-size: 1.04rem;
+        line-height: 1.8;
+      }
+      .posts-intro { max-width: 980px; margin-bottom: 34px; }
+      .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 250px));
+        gap: 36px;
+        margin-top: 36px;
+      }
+      .video-item h3 { font-size: 1.18rem; }
+      .video-item p { font-size: .9rem; }
+
+      .intro-paragraph { max-width: 980px; }
+      .religion-list { gap: 32px; }
+      .religion { padding-top: 18px; }
+      .religion img { aspect-ratio: 5 / 3; }
+      .religion h3 {
+        margin: 17px 0 8px;
+        font-size: 1.55rem;
+      }
+      .religion p {
+        font-size: .96rem;
+        line-height: 1.8;
+      }
+
+      .history-grid {
+        grid-template-columns: minmax(0, 1.3fr) minmax(300px, .7fr);
+        gap: clamp(42px, 5vw, 72px);
+      }
+      .history-image img {
+        width: 100%;
+        max-height: 620px;
+        aspect-ratio: auto;
+        object-fit: contain;
+        object-position: center top;
+      }
+
+      .question {
+        max-width: 1040px;
+        padding-bottom: 26px;
+        margin-bottom: 26px;
+      }
+      .question h3 {
+        font-size: 1.25rem;
+        line-height: 1.45;
+      }
+      .question p {
+        font-size: 1.04rem;
+        line-height: 1.8;
+      }
+
+      .reference-list { max-width: 980px; }
+      .reference-list li { font-size: .92rem; }
+      .student-data {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        max-width: 1080px;
+        gap: 12px 28px;
+      }
+      .student-data p { font-size: .88rem; }
+      footer { padding: 26px 0 34px; font-size: .82rem; }
+    }
+
     @media (max-width: 760px) {
       .container { width: min(100% - 32px, var(--width)); }
       .topbar-inner { min-height: 58px; }
