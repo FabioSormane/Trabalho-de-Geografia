@@ -1,0 +1,20 @@
+COLOQUE SUAS IMAGENS NESTA PASTA
+
+Use estes nomes exatos:
+
+img1.jpg  - Foto panorâmica de Jerusalém para a capa.
+img2.jpg  - Muro das Lamentações (judaísmo).
+img3.jpg  - Igreja do Santo Sepulcro (cristianismo).
+img4.jpg  - Mesquita de Al-Aqsa (islamismo).
+img5.jpg  - Mapa da região / Plano de Partilha da ONU de 1947.
+vid1.jpg  - Captura do primeiro Reel (vertical, 9:16).
+vid2.jpg  - Captura do segundo Reel (vertical, 9:16).
+
+Tamanhos recomendados:
+- img1.jpg: 1600 x 900 px, até 300 KB.
+- img2.jpg a img4.jpg: 900 x 675 px, até 180 KB cada.
+- img5.jpg: 1000 px de largura ou mais, até 250 KB.
+- vid1.jpg e vid2.jpg: 720 x 1280 px (vertical), até 180 KB cada.
+
+Dica: comprima as fotos em https://squoosh.app/ antes de colocar aqui.
+Não coloque vídeos MP4 nesta pasta: o site usa imagens verticais de capa/captura dos vídeos.

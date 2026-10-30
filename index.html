@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f1eee7">
+  <meta name="description" content="Trabalho de Geografia sobre Jerusalém e sua importância para três religiões.">
+  <title>Jerusalém — Trabalho de Geografia</title>
+  <style>
+    :root {
+      --paper: #f1eee7;
+      --paper-dark: #e6e0d5;
+      --ink: #24241f;
+      --muted: #716d64;
+      --line: #d2cbbf;
+      --olive: #555545;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: Arial, Helvetica, sans-serif;
+      --width: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .container { width: min(var(--width), calc(100% - 44px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(241, 238, 231, .97);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    .topbar-inner {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .site-name {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    nav { display: flex; flex-wrap: wrap; gap: 22px; }
+    nav a {
+      color: #48473f;
+      font-size: .82rem;
+      text-decoration: none;
+    }
+    nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .menu-button {
+      display: none;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      border-radius: 3px;
+    }
+
+    .cover {
+      display: grid;
+      grid-template-columns: 1fr 1.12fr;
+      min-height: 390px;
+      background: #24251f;
+      color: #f5f1e9;
+    }
+    .cover-text {
+      width: 100%;
+      max-width: 540px;
+      justify-self: end;
+      align-self: center;
+      padding: 55px 42px 55px max(22px, calc((100vw - var(--width)) / 2));
+    }
+    .overline {
+      margin: 0 0 15px;
+      color: #c9b99c;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 540px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.7rem, 5.4vw, 5rem);
+      font-weight: 500;
+      letter-spacing: -.045em;
+      line-height: 1.02;
+    }
+    .cover-subtitle {
+      margin: 15px 0 0;
+      color: #d7c8ad;
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.3vw, 1.75rem);
+    }
+    .cover-photo { min-height: 390px; background: #777064; }
+    .cover-photo img { width: 100%; height: 100%; min-height: 390px; object-fit: cover; }
+
+    .school-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 28px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .78rem;
+    }
+    .school-info strong { color: var(--ink); font-weight: 600; }
+
+    section.content-section { padding: 58px 0; border-bottom: 1px solid var(--line); }
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      gap: 13px;
+      margin: 0 0 28px;
+      font-family: var(--serif);
+      font-size: clamp(1.65rem, 3vw, 2.3rem);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .section-title span {
+      color: var(--olive);
+      font-family: var(--sans);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+    .text-column { max-width: 850px; }
+    .text-column p { margin: 0 0 17px; font-size: .96rem; }
+    .text-column p:last-child { margin-bottom: 0; }
+
+    
+    .posts-intro { max-width: 850px; margin-bottom: 28px; }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 210px));
+      gap: 28px;
+      margin-top: 30px;
+    }
+    .video-item { min-width: 0; }
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      background: #d8d1c5;
+      border: 1px solid #c9c1b5;
+    }
+    .video-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .video-item h3 {
+      margin: 11px 0 3px;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .video-item p { margin: 0; color: var(--muted); font-size: .82rem; }
+    .small-note { margin-top: 19px; color: var(--muted); font-size: .78rem; }
+
+    
+    .intro-paragraph { max-width: 850px; margin-bottom: 30px; }
+    .religion-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .religion { border-top: 2px solid #8b806c; padding-top: 14px; }
+    .religion img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--paper-dark); }
+    .religion h3 { margin: 13px 0 6px; font-family: var(--serif); font-size: 1.35rem; font-weight: 500; }
+    .religion p { margin: 0; font-size: .88rem; line-height: 1.7; }
+
+    .history-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(230px, .75fr); gap: 40px; align-items: start; }
+    .history-image img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--paper-dark); }
+    .history-image figcaption { margin-top: 8px; color: var(--muted); font-size: .75rem; }
+    .question { max-width: 900px; padding: 0 0 21px; margin: 0 0 21px; border-bottom: 1px solid var(--line); }
+    .question:last-child { padding-bottom: 0; margin-bottom: 0; border: 0; }
+    .question h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 1.12rem; font-weight: 600; }
+    .question p { margin: 0; font-size: .94rem; }
+
+    .reference-list { max-width: 850px; padding-left: 20px; margin: 0; }
+    .reference-list li { padding: 3px 0; font-size: .86rem; }
+    .reference-list a { color: #5a584d; text-underline-offset: 3px; }
+    .student-data {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px 25px;
+      max-width: 850px;
+      margin-top: 30px;
+      padding: 19px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .student-data p { margin: 0; color: var(--muted); font-size: .83rem; }
+    .student-data strong { color: var(--ink); }
+    footer { padding: 22px 0 30px; color: var(--muted); font-size: .75rem; }
+
+    @media (max-width: 760px) {
+      .container { width: min(100% - 32px, var(--width)); }
+      .topbar-inner { min-height: 58px; }
+      .menu-button { display: block; }
+      nav {
+        display: none;
+        position: absolute;
+        top: 58px;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 16px 14px;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+      }
+      nav.open { display: flex; }
+      nav a { padding: 9px 0; border-bottom: 1px solid var(--line); }
+      nav a:last-child { border-bottom: 0; }
+      .cover { grid-template-columns: 1fr; }
+      .cover-text { padding: 42px 22px 30px; }
+      .cover-photo, .cover-photo img { min-height: 230px; max-height: 300px; }
+      .school-info { gap: 7px 18px; }
+      section.content-section { padding: 43px 0; }
+      .section-title { margin-bottom: 22px; }
+      .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .religion-list { grid-template-columns: 1fr; gap: 25px; }
+      .religion { display: grid; grid-template-columns: 112px minmax(0, 1fr); column-gap: 15px; align-items: start; }
+      .religion img { grid-row: span 2; aspect-ratio: 1 / 1; }
+      .religion h3 { margin: 0 0 5px; font-size: 1.2rem; }
+      .religion p { font-size: .82rem; }
+      .history-grid { grid-template-columns: 1fr; gap: 24px; }
+      .history-image { max-width: 520px; }
+      .history-image img { aspect-ratio: 16 / 10; }
+      .student-data { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 390px) {
+      .section-title { font-size: 1.5rem; }
+      .video-grid { gap: 11px; }
+      .video-item h3 { font-size: .94rem; }
+      .religion { grid-template-columns: 96px minmax(0, 1fr); gap: 11px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="topbar" id="inicio">
+    <div class="container topbar-inner">
+      <a class="site-name" href="#inicio">Jerusalém</a>
+      <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="mainNav">Menu</button>
+      <nav id="mainNav" aria-label="Navegação principal">
+        <a href="#parte1">Parte 1</a>
+        <a href="#parte2">Parte 2</a>
+        <a href="#parte3">Parte 3</a>
+        <a href="#fontes">Fontes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="cover">
+      <div class="cover-text">
+        <p class="overline">Trabalho de Geografia · Oriente Médio</p>
+        <h1>Jerusalém</h1>
+        <p class="cover-subtitle">Uma cidade, três religiões</p>
+      </div>
+      <div class="cover-photo">
+        <img src="img/img1.webp" alt="Vista panorâmica de Jerusalém" fetchpriority="high">
+      </div>
+    </section>
+
+    <div class="container school-info">
+      <span><strong>Aluno:</strong> Fabio Sormane M. Campos</span>
+      <span><strong>Turma:</strong> 9ºB</span>
+      <span><strong>Matéria:</strong> Geografia</span>
+      <span><strong>Professora:</strong> Isabela</span>
+    </div>
+
+    <section class="content-section" id="parte1">
+      <div class="container">
+        <h2 class="section-title"><span>PARTE 1</span> Publicações nas redes sociais</h2>
+        <div class="text-column posts-intro">
+          <p>O primeiro vídeo, com nome de: <strong>"De quem é Jerusalém?"</strong>, nos apresenta a história da cidade e os diferentes povos e impérios que tiveram o poder ao longo do tempo. O vídeo mostra como Jerusalém se tornou uma terra marcada por guerras e disputas históricas, territoriais e religiosas. Ele foi publicado pelo perfil <strong>"PlanoPiloto"</strong>. A forma que os acontecimentos são mostrados pode influenciar a opinião do público, dependendo de quais povos e acontecimentos recebem mais destaque, mas não há nenhuma opinião clara no vídeo.</p>
+          <p>O segundo vídeo, com o nome de: <strong>"O que NÃO te contaram sobre ISRAEL X PALESTINA:"</strong>, apresenta a história da guerra territorial entre Israel e Palestina por Jerusalém. O vídeo mostra o que ocasionou essa guerra e por quê. Ele foi publicado pelo perfil <strong>"investigapinhel"</strong>. Não há opinião clara no vídeo.</p>
+        </div>
+
+        <div class="video-grid">
+          <article class="video-item">
+            <div class="video-frame"><img src="img/vid1.png" alt="Captura do primeiro vídeo: De quem é Jerusalém?" loading="lazy"></div>
+            <h3><a href="https://youtube.com/shorts/c1LljPDsvNk?si=gkvpFc047p6jD195" target="_blank">De quem é Jerusalém?</a></h3>
+            <p>Perfil: PlanoPiloto</p>
+          </article>
+          <article class="video-item">
+            <div class="video-frame"><img src="img/vid2.png" alt="Captura do segundo vídeo: O que NÃO te contaram sobre Israel x Palestina" loading="lazy"></div>
+            <h3><a href="https://youtube.com/shorts/CgMysgJIp9E?si=Wu_TYGE4aey_IOsi" target="_blank">O que NÃO te contaram sobre ISRAEL X PALESTINA</a></h3>
+            <p>Perfil: investigapinhel</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="parte2">
+      <div class="container">
+        <h2 class="section-title"><span>PARTE 2</span> Jerusalém e suas disputas</h2>
+        <div class="text-column intro-paragraph">
+          <p><strong>O conflito entre Israel e Palestina por Jerusalém</strong></p>
+          <p>É importante dizer que este conflito não é somente uma guerra por religião; temos que perceber que coisas como território e nacionalismo também fazem parte do conflito.</p>
+          <p>Jerusalém é uma cidade localizada no Oriente Médio entre o Mar Morto e o Mar Mediterrâneo. Ela possui uma importância enorme para três religiões:</p>
+        </div>
+
+        <div class="religion-list">
+          <article class="religion">
+            <img src="img/img2.jpg" alt="Muro das Lamentações, importante para o judaísmo" loading="lazy">
+            <h3>Judaísmo</h3>
+            <p>Principalmente por conta da Torá e do Tanakh. A cidade também foi o local dos antigos templos judaicos, que possuem grande importância para essa religião.</p>
+          </article>
+          <article class="religion">
+            <img src="img/img3.jpg" alt="Igreja do Santo Sepulcro, importante para o cristianismo" loading="lazy">
+            <h3>Cristianismo</h3>
+            <p>Principalmente por conta da Bíblia (Novo Testamento). Jerusalém está ligada aos últimos acontecimentos da vida de Jesus, principalmente sua crucificação e ressurreição, segundo a tradição cristã.</p>
+          </article>
+          <article class="religion">
+            <img src="img/img4.jpg" alt="Mesquita de Al-Aqsa, importante para o islamismo" loading="lazy">
+            <h3>Islamismo</h3>
+            <p>Principalmente por conta do Alcorão e da tradição islâmica. A cidade abriga a Mesquita de Al-Aqsa, relacionada à tradição da viagem noturna do profeta Maomé.</p>
+          </article>
+        </div>
+
+        <div class="history-grid" style="margin-top:42px">
+          <div class="text-column">
+            <p>As disputas pelo território da Palestina ganharam força com o crescimento do sionismo, que defendia a criação de um Estado judeu, enquanto os árabes palestinos buscavam a independência da região onde viviam.</p>
+            <p>Em 1917, o governo britânico publicou a Declaração Balfour, apoiando a criação de um lar nacional para o povo judeu na Palestina. Em 1947, a ONU propôs a divisão do território em dois Estados, um judeu e outro árabe, mas as lideranças árabes palestinas e os países árabes rejeitaram a proposta. Jerusalém teria um regime internacional especial.</p>
+            <p>Após isso, Israel declarou sua independência, iniciando uma guerra com países árabes vizinhos. Em 1948, Jerusalém ficou dividida entre Israel e Jordânia. Em 1967, Israel ocupou Jerusalém Oriental.</p>
+            <p>Atualmente, os principais envolvidos na disputa política são israelenses e palestinos. O conflito ainda não terminou porque os dois lados não chegaram a um acordo sobre questões como o controle de Jerusalém, a divisão territorial e a criação de um Estado palestino independente. Além disso, décadas de violência e desconfiança dificultam as negociações de paz.</p>
+          </div>
+          <figure class="history-image">
+            <img src="img/img5.jpg" alt="Mapa relacionado à divisão territorial da Palestina" loading="lazy">
+          </figure>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="content-section" id="parte3">
+      <div class="container">
+        <h2 class="section-title"><span>PARTE 3</span> Reflexões</h2>
+        <article class="question">
+          <h3>a) A imagem do Oriente Médio que aparece na internet é igual aos que você entendeu e pesquisou?</h3>
+          <p>Não, nem um pouco. A imagem que aparece na internet normalmente é algo mais "belo", e é onde normalmente ocultam os defeitos do lugar. Pesquisando levemente a fundo, você percebe o tamanho da desigualdade social e como a maioria esmagadora do Oriente realmente se parece.</p>
+        </article>
+        <article class="question">
+          <h3>b) O que muda quando você entende o contexto?</h3>
+          <p>Sinto que as imagens retratadas do Oriente Médio são "falsas", não pq não existem, mas sim porque fazem parecer que aquilo é o Oriente, o que claramente não é.</p>
+        </article>
+        <article class="question">
+          <h3>c) Agora escreva como você vê o Oriente Médio após o trabalho e as aulas.</h3>
+          <p>Vejo como um lugar que tem uma cultura RIQUÍSSIMA e que tem guerra pra caramba, mas, entrando em mais detalhes, eu percebi que o Oriente Médio é um lugar afundado por uma enorme desigualdade social, mas que foi um dos lugares mais importantes da história da sociedade como um todo. O Oriente é FOD@!</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section" id="fontes">
+      <div class="container">
+        <h2 class="section-title"><span>FINAL</span> Fontes consultadas</h2>
+        <ul class="reference-list">
+          <li><a href="https://www.un.org/unispal/history/" target="_blank" rel="noopener noreferrer">Organização das Nações Unidas — História da questão da Palestina.</a></li>
+          <li><a href="https://whc.unesco.org/en/list/148/" target="_blank" rel="noopener noreferrer">UNESCO — Cidade Antiga de Jerusalém e suas muralhas.</a></li>
+          <li><a href="https://www.britannica.com/place/Jerusalem" target="_blank" rel="noopener noreferrer">Encyclopaedia Britannica — Jerusalem.</a></li>
+        </ul>
+
+        <div class="student-data">
+          <p><strong>Aluno:</strong> Fabio Sormane M. Campos</p>
+          <p><strong>Turma:</strong> 9ºB</p>
+          <p><strong>Matéria:</strong> Geografia</p>
+          <p><strong>Professora:</strong> Isabela</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">Trabalho de Geografia · 2026</div></footer>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const mainNav = document.getElementById('mainNav');
+
+    menuButton.addEventListener('click', () => {
+      const open = mainNav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.textContent = open ? 'Fechar' : 'Menu';
+    });
+
+    mainNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.textContent = 'Menu';
+      });
+    });
+  </script>
+</body>
+</html>
